@@ -91,7 +91,7 @@
 			cin>>stock;
 			cout<<"\nIngrese la catogaria: ";cin>>categoria;
 			cout<<"\nIngrese precio d/venta: ";cin>>precio_venta;
-			producto *a=new producto(nombre,cost_unt,stock,categoria,precio_venta);;
+			producto *a=new producto(nombre,cost_unt,stock,categoria,precio_venta);
 			ListaProductos.push_back(a);
 		}
 		
