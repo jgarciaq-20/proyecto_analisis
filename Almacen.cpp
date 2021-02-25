@@ -78,20 +78,7 @@
 		else
 		{
 			cout<<"\nSe va agregar un nuevo producto";
-			string nombre;
-			float cost_unt;
-			int stock;
-			string categoria;
-			float precio_venta;
-			cout<<"\nIngrese nombre: ";
-			cin>>nombre;
-			cout<<"\nIngrese costo unitario: ";
-			cin>>cost_unt;
-			cout<<"\nIngrese el stock: ";
-			cin>>stock;
-			cout<<"\nIngrese la catogaria: ";cin>>categoria;
-			cout<<"\nIngrese precio d/venta: ";cin>>precio_venta;
-			producto *a=new producto(nombre,cost_unt,stock,categoria,precio_venta);
+			a->ingre_datos();
 			ListaProductos.push_back(a);
 		}
 		
