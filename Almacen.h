@@ -9,6 +9,8 @@ class Almacen{
 	private:
 		vector<producto*> ListaProductos;
 	//	vector<Factura*> ListaFacturas;
+	proveedor *Proveedor;
+		vector<proveedor*> ListaProveedor;
 	public:
 		Almacen();
 		//producto* getProducto();
@@ -23,6 +25,14 @@ class Almacen{
 		//void agregar_Factura(Factura*);
 		void buscar_Producto(string);
 		void eliminar_Producto(string);
+			//Almacen();
+			//-------
+		void visualizar_proveedor();
+		void agregar_proveedores(proveedor *);
+		void actualizarProveedor();
+		void buscarProveedor(string);
+		
+		void busqueda_nombre_empresa(string);
 	//	void busqueda_telefono(string);
 };
 /*	void Almacen::agregar_Factura(Factura *factu){
@@ -103,4 +113,57 @@ class Almacen{
 
 }
 */
+//------------------------------------------------------
+Almacen::Almacen(){		
+}
+	
+	
+	void Almacen::visualizar_proveedor(){
+		
+		if(ListaProveedor.size()>0){
+		cout<<endl<<"cantidad de proveedores"<<ListaProveedor.size();
+		
+			for(int i=0;i<ListaProveedor.size();i++){
+				ListaProveedor[i] -> mostrar_proveedores();
+			}		
+		}
+		else{
+			cout<<"Aun no hay Productos registrados"<<endl;
+		}
+
+	}
+
+void Almacen::agregar_proveedores(proveedor *Proveedor){
+
+		ListaProveedor.push_back(Proveedor);
+}
+	
+void Almacen::busqueda_nombre_empresa(string t)
+	{
+		proveedor k;
+		Almacen a;
+		vector<proveedor*>::iterator pr = ListaProveedor.begin();
+		
+		int i=0, bandera = 1;
+		
+		while( pr != ListaProveedor.end()){
+			
+			if( ListaProveedor[i]-> get_nombre_de_la_empresa() == t){
+					cout<<"Se encontro proveedor"<<endl<<endl;
+					ListaProveedor[i] -> mostrar_proveedores();
+					bandera = 1;
+				break;
+			} 
+			bandera = 0;
+			i++;
+			pr++;
+		}
+		if (bandera == 0){
+			cout<<endl<<endl<<"Proveedor no encontrado"<<endl;
+			cout<<endl<<ListaProveedor.size()<<endl;
+			k.ingresar_proveedores();
+			ListaProveedor.push_back(&k);
+			cout<<endl<<ListaProveedor.size()<<endl;			
+		}
+	}
 #endif
