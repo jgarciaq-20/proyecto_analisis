@@ -114,19 +114,7 @@ class Almacen{
 }
 */
 //------------------------------------------------------
-class Almacen{
-	private:
-		proveedor *Proveedor;
-		vector<proveedor*> ListaProveedor;
-	public:
-		Almacen();
-		void visualizar_proveedor();
-		void agregar_proveedores(proveedor *);
-		void actualizarProveedor();
-		void buscarProveedor(string);
-		
-		void busqueda_nombre_empresa(string);	
-};
+
 Almacen::Almacen(){		
 }
 	
