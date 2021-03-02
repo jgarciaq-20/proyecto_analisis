@@ -10,7 +10,6 @@ class Almacen{
 	private:
 		vector<producto*> ListaProductos;
 	//	vector<Factura*> ListaFacturas;
-	proveedor *Proveedor;
 		vector<proveedor*> ListaProveedor;
 	public:
 		Almacen();
@@ -18,7 +17,7 @@ class Almacen{
 		void visualizarProductos();
 		//void visualizarFacturas();
 //		void visualizarProveedor(producto*);
-		void agregar_Producto(producto*);
+		void agregar_Producto();
 		//void agregar_Factura(Factura*);
 		//void modificar_precio(string);
 		//void agregar_Factura(Factura*);
@@ -29,7 +28,7 @@ class Almacen{
 			//Almacen();
 			//-------
 		void visualizar_proveedor();
-		void agregar_proveedores(proveedor *);
+		void agregar_proveedores();
 		void actualizarProveedor();
 		void buscarProveedor(string);
 		

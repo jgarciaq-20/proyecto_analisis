@@ -25,6 +25,11 @@ almacenero::almacenero()
         }
 	fe.close();
 }
+almacenero::almacenero(string a,string b)
+{
+	Nombre=a;
+	DNI=b;
+}
 void almacenero::mostrar()
 {
 	cout<<"\nNombre:"<<Nombre;

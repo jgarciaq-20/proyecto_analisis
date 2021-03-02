@@ -41,8 +41,10 @@
 		}
 	}
 
-	void Almacen::agregar_Producto(producto *product){
-		ListaProductos.push_back(product);
+	void Almacen::agregar_Producto(){
+		producto a;
+		a.ingre_datos();
+		ListaProductos.push_back(&a);
 	}
 	void Almacen::buscar_Producto(string nombre)
 	{
@@ -95,4 +97,59 @@
 			ListaProductos.push_back(a);
 		}
 		
+	}
+		void Almacen::visualizar_proveedor(){
+		
+		if(ListaProveedor.size()>0){
+		cout<<endl<<"cantidad de proveedores: "<<ListaProveedor.size();
+		
+			for(int i=0;i<ListaProveedor.size();i++){
+				ListaProveedor[i] -> mostrar_proveedores();
+				cout<<endl;
+			}		
+		}
+		else{
+			cout<<"Aun no hay Productos registrados"<<endl;
+		}
+
+	}
+
+void Almacen::agregar_proveedores()
+{
+		proveedor *b=new proveedor;
+		b->ingresar_proveedores();
+		ListaProveedor.push_back(b);
+}
+	
+void Almacen::busqueda_nombre_empresa(string t)
+	{
+
+		proveedor k;
+		Almacen a;
+		vector<proveedor*>::iterator pr = ListaProveedor.begin();
+		
+		int i=0, bandera = 1;
+		if(ListaProveedor.size()==0)
+		{
+			cout<<endl<<endl<<"No hay proveedores";
+		}
+		
+		while( pr != ListaProveedor.end()){
+			
+			if( ListaProveedor[i]-> get_nombre_de_la_empresa() == t)
+			{
+					cout<<"Se encontro proveedor"<<endl;
+					ListaProveedor[i] -> mostrar_proveedores();
+					bandera = 1;
+				break;
+			} 
+			
+			
+			bandera = 0;
+			i++;
+			pr++;
+		}
+		if (bandera == 0){
+			cout<<endl<<endl<<"Proveedor no encontrado"<<endl;	
+		}
 	}

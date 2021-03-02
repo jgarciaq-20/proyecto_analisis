@@ -1,6 +1,9 @@
+#ifndef PROVEEDOR_H
+#define PROVEEDOR_H
 #include<iostream>
 #include<stdlib.h>
 #include<string>
+#include<string.h>
 using namespace std;
 
 class proveedor{
@@ -11,8 +14,11 @@ class proveedor{
 		char categoria[15];
 	public:
 		proveedor();
-		ingresar_proveedores();
-		mostrar_proveedores();
+		proveedor(char *,char *,char *,char *);
+		void ingresar_proveedores();
+		void mostrar_proveedores();
+		string get_nombre_de_la_empresa();
 }; 
 
+#endif
 

@@ -13,6 +13,7 @@ class almacenero
 		string Nombre;
 	public:
 		almacenero();
+		almacenero(string,string);
 		void mostrar();
 		void actualizar(Almacen &);
 		void visualizar(Almacen &);
