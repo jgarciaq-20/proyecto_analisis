@@ -4,12 +4,13 @@
 #include <string>
 #include <vector>
 #include "producto.h"
+#include "proveedor.h"
 using namespace std;
 class Almacen{
 	private:
 		vector<producto*> ListaProductos;
 	//	vector<Factura*> ListaFacturas;
-		proveedor *Proveedor;
+	proveedor *Proveedor;
 		vector<proveedor*> ListaProveedor;
 	public:
 		Almacen();
@@ -115,7 +116,7 @@ class Almacen{
 */
 //------------------------------------------------------
 
-Almacen::Almacen(){		
+/*Almacen::Almacen(){		
 }
 	
 	
@@ -170,10 +171,10 @@ void Almacen::busqueda_nombre_empresa(string t)
 		}
 		if (bandera == 0){
 			cout<<endl<<endl<<"Proveedor no encontrado"<<endl;
-			//cout<<endl<<"cantidad de proveedores: "<<ListaProveedor.size()<<endl;
-		//	k.ingresar_proveedores();
-		//	ListaProveedor.push_back(&k);
-			//cout<<endl<<"cantidad de proveedores: "<<ListaProveedor.size()<<endl;			
+			cout<<endl<<"cantidad de proveedores: "<<ListaProveedor.size()<<endl;
+			k.ingresar_proveedores();
+			ListaProveedor.push_back(&k);
+			cout<<endl<<"cantidad de proveedores: "<<ListaProveedor.size()<<endl;			
 		}
-	}
+	}*/
 #endif
