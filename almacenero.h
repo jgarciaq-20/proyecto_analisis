@@ -17,6 +17,7 @@ class almacenero
 		void mostrar();
 		void actualizar(Almacen &);
 		void visualizar(Almacen &);
+		void reporte_inventario(){
 };
 
 #endif

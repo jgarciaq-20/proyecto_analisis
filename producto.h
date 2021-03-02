@@ -5,7 +5,6 @@
 #include<string>
 #include<stdio.h>
 using namespace std;
-
 class producto{
 	private:
 			string nombre;
@@ -15,7 +14,7 @@ class producto{
 			float precio_venta;
 		//	char estado;
 	public:
-		producto(){	precio_venta = 0;	}
+		producto();
 		void setprecio_venta(float _precio_venta){	precio_venta = _precio_venta;	}
 		void setnombre(string _nombre){	nombre = _nombre;	}
 		void setstock(int _stock){	stock += _stock;	}

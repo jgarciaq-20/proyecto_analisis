@@ -4,14 +4,15 @@
 #include "Almacenero.h"
 #include "Almacen.h"
 #include "proveedor.h"
+#include "administradora.h"
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-using namespace std;
 int main()
 {
+	cout<<"holamundo";
 	Almacen a;
 	almacenero b("Xavier","71215344");
-	proveedor c("gaseosa","lito","efe","psps");
-	a.agregar_proveedores();
-	a.visualizar_proveedor();
+	proveedor c;
+	producto d;	
+	b.mostrar();
 }	
 

@@ -11,6 +11,7 @@ proveedor::proveedor(char *_nombre_completo, char *_telefono, char *_nombre_de_l
 }
 void proveedor::ingresar_proveedores()
 {
+	fflush(stdin);
 	cout<<"ingresar el nombre completo: ";
 	cin.getline(nombre_completo,40);
 	cout<<endl<<"ingresar el telefono: ";

@@ -1,4 +1,8 @@
 #include "producto.h"
+producto::producto()
+{
+		precio_venta = 0;	
+}
 void producto::ingre_datos()
 {
 	fflush(stdin);
