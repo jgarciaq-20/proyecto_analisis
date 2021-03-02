@@ -79,22 +79,29 @@
 		}
 		else
 		{
-			cout<<"\nSe va agregar un nuevo producto";
-			string nombre;
-			float cost_unt;
-			int stock;
-			string categoria;
-			float precio_venta;
-			cout<<"\nIngrese nombre: ";
-			cin>>nombre;
-			cout<<"\nIngrese costo unitario: ";
-			cin>>cost_unt;
-			cout<<"\nIngrese el stock: ";
-			cin>>stock;
-			cout<<"\nIngrese la catogaria: ";cin>>categoria;
-			cout<<"\nIngrese precio d/venta: ";cin>>precio_venta;
-			producto *a=new producto(nombre,cost_unt,stock,categoria,precio_venta);
-			ListaProductos.push_back(a);
+			string s;
+			cout<<"\ndeseas Agregar producto: [s] o[n]: ";
+			cin>>s;
+			if(s=="s")
+			{
+				cout<<"\nSe va agregar un nuevo producto";
+				string nombre;
+				float cost_unt;
+				int stock;
+				string categoria;
+				float precio_venta;
+				cout<<"\nIngrese nombre: ";
+				cin>>nombre;
+				cout<<"\nIngrese costo unitario: ";
+				cin>>cost_unt;
+				cout<<"\nIngrese el stock: ";
+				cin>>stock;
+				cout<<"\nIngrese la catogaria: ";cin>>categoria;
+				cout<<"\nIngrese precio d/venta: ";cin>>precio_venta;
+				producto *a=new producto(nombre,cost_unt,stock,categoria,precio_venta);
+				ListaProductos.push_back(a);
+			}
+			
 		}
 		
 	}
@@ -153,98 +160,3 @@ void Almacen::busqueda_nombre_empresa(string t)
 			cout<<endl<<endl<<"Proveedor no encontrado"<<endl;	
 		}
 	}
-	void Almacen::modificar_precio(string nombre){
-		vector<producto*>::iterator p = ListaProductos.begin();		
-		int i=0,band=0;
-		float precio_new;
-		
-		cout<<endl;
-		visualizarProductos();
-		cout<<endl;
-		while( p != ListaProductos.end() ){			
-			if( ListaProductos[i]-> getnombre() == nombre){
-				
-				gotoxy(50,3);cout<<"Producto: "<<ListaProductos[i] -> getnombre();
-				gotoxy(50,4);cout<<"Ingrese nuevo precio: ";cin>>precio_new;
-				
-				ListaProductos[i] -> setprecio_venta(precio_new);
-				system("cls");
-				cout<<"\nModificacion de Precio guardada"<<endl<<endl;
-				visualizarProductos();
-				band = 1;
-				break;
-			} 
-			i++;
-			p++;
-		}
-		if(band == 0){
-			cout<<"\nNo existe Producto"<<endl;
-		}
-}
-
-void Almacen::enlistarproducto(string nombre)
-{
-		int i=0,c=0;
-		producto *a;
-		if(ListaProductos.size()<=0)
-		{
-			cout<<"No hay PRODUCTO";
-		}
-		else
-		{
-			while (i!=ListaProductos.size())
-			{
-				if(ListaProductos[i]->getnombre()==nombre)
-				{
-					cout<<"\nProducto encontrado: ";
-					c=1;
-					break;
-				}
-				else
-				{
-					i++;
-				}
-			}	
-		}
-		
-		if(c==1)
-		{
-		string respuesta;
-			vector<producto*> ListaCompras;
-			cout<<ListaProductos[i]->getnombre();
-			cout<<"\nEnlistar Producto ?(s/n): ";cin>>respuesta;
-			
-			if(respuesta=="s"){
-				ListaCompras.push_back(ListaProductos[i]);
-				cout<<"\n\tPRODUCTO ENLISTADO"<<endl<<endl;
-					for(int i=0;i<ListaCompras.size();i++){
-						ListaCompras[i] -> mostrar_datos();
-					}		
-			}//cout<<ListaProductos[i]->getnombre();
-			else{
-				cout<<"No se enlisto producto";
-			}
-		}
-		else{
-			cout<<"\nProducto no encontrado";
-		}
-}
-void Almacen::reporte_inventario()
-{
-	system("cls");
-	cout<<" Nombre\t  Costo Unitario\tStock\t\tCategoria\tPrecio/venta"<<endl<<endl;
-	vector<producto*>::iterator p = ListaProductos.begin();
-	
-	int i=0;
-	
-	while(p != ListaProductos.end()){		
-		gotoxy(1,i+2);cout<<ListaProductos[i]->getnombre();
-		gotoxy(14,i+2);cout<<ListaProductos[i]->getcost_unt();
-		gotoxy(33,i+2);cout<<ListaProductos[i]->getstock();
-		gotoxy(50,i+2);cout<<ListaProductos[i]->getcategoria();
-		gotoxy(67,i+2);cout<<ListaProductos[i]->getprecio_venta();
-		i++;
-		p++;
-	}
-}
-

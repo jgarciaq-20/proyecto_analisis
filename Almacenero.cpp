@@ -45,3 +45,7 @@ void almacenero::actualizar(Almacen &p)
 	cout<<"\nNombre:";cin>>Nombre;
 	p.buscar_Producto(Nombre);
 }
+void almacenero::crearP(Almacen &p)
+{
+	p.agregar_Producto();
+}

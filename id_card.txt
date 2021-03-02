@@ -1,0 +1,3 @@
+usuario contrasena tipo
+Tania 71215344 almacenero
+leonardo 70050004 administrador

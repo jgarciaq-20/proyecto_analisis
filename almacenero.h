@@ -15,9 +15,9 @@ class almacenero
 		almacenero();
 		almacenero(string,string);
 		void mostrar();
-		void actualizar(Almacen &);
-		void visualizar(Almacen &);
-		void reporte_inventario(){
+		void actualizar(Almacen &p);
+		void visualizar(Almacen &P);
+		void crearP(Almacen &p);
 };
 
 #endif
